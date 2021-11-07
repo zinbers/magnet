@@ -1,0 +1,56 @@
+{
+  "id": "dodder",
+  "name": "菟丝子",
+  "desc": "【优】【英文】【支持中文搜索】",
+  "proxy": false,
+  "publish": "",
+  "publishMail": "",
+  "url": "https://www.dodder.icu",
+  "referer": "https://www.dodder.icu",
+  "path": {
+    "default": "/?page={p}&fileName={k}"
+  },
+  "parse": {
+    "item": {
+      "type": "url",
+      "xpath": "//table[contains(@class,'dodder-torrent-list')]//td//div[1]/a/@href",
+      "startIndex": 0
+    },
+    "page": [
+      {
+        "type": null,
+        "default": 0
+      }
+    ],
+    "magnet": [
+      {
+        "type": "xpath",
+        "xpath": "//p[contains(@class,'dodder-magnet-link')]//@href"
+      }
+    ],
+    "name": [
+      {
+        "type": "xpathList",
+        "xpath": "//div[contains(@class,'layui-col-md9')]/div/div[1]/b//text()"
+      }
+    ],
+    "hot": [
+      {
+        "type": null,
+        "default": 0
+      }
+    ],
+    "size": [
+      {
+        "type": "xpath",
+        "xpath": "//ul[contains(@class,'dodder-torrent-header')]//li[2]//text()"
+      }
+    ],
+    "time": [
+      {
+        "type": "xpath",
+        "xpath": "//ul[contains(@class,'dodder-torrent-header')]//li[1]//text()"
+      }
+    ]
+  }
+}

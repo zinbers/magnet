@@ -58,7 +58,7 @@ class MainWindow(QObject):
 
     @Slot(result = 'QVariant')
     def get_rules(self):
-        pro_list = ['bitsearch', 'btsow_proxy', 'zooqle']
+        pro_list = ['bitsearch', 'btsow_proxy', 'zooqle','dodder']
         rules = []
 
         file_list = os.listdir('rule')
